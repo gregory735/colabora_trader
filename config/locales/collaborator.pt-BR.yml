@@ -1,0 +1,13 @@
+---
+pt-BR:
+  activerecord:
+    models:
+      collaborator: 'Collaborador'
+    attributes:
+      collaborator:
+        name: 'Nome'
+        email: 'E-mail'
+        password: 'Senha'
+        position: 'Cargo'
+        remember_me: 'Lembre-se de mim'
+        password_confirmation: 'Confirmar Senha'

@@ -1,3 +1,14 @@
 <header>
   <h3>Bem vindo ao ColaBora Trader</h3>
+  <h5>Site exclusivos para colaboradores da empresa XXX</h5>
 </header>
+
+<% if collaborator_signed_in? %>
+  <%= current_collaborator.name %>
+  <li><%= link_to 'Sair', destroy_collaborator_session_path, method: :delete %></li>
+<% else %>
+  <%= link_to 'Entrar', new_collaborator_session_path %>
+  <%= link_to 'Nova Conta', new_collaborator_registration_path %>
+<% end %>
+
+
