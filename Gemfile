@@ -34,6 +34,11 @@ gem 'bootsnap', '>= 1.4.2', require: false
 #This gem does some CPF/CNPJ magic. It allows you to create, validate and format CPF/CNPJ, even through the command-line.
 gem "cpf_cnpj"
 
+#bootstrap-sass is a Sass-powered version of Bootstrap 3, ready to drop right into your Sass powered applications.
+gem 'bootstrap-sass', '~> 3.4.1'
+gem 'sassc-rails', '>= 2.1.0'
+gem 'jquery-rails'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
