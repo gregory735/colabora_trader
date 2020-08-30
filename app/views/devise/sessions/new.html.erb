@@ -3,7 +3,6 @@
     <div class="fadeIn first">
       <h3>Bem vindo ao Colabora Trader!</h3>
     </div>
-    <form>
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="field">
         <%= f.label :email %><br />
@@ -26,10 +25,6 @@
         <%= f.submit 'Entrar' %>
       </div>
       <% end %>
-
-     
-    </form>
-
     <!-- Remind Passowrd -->
     <div id="formFooter">
        <%= render "devise/shared/links" %>

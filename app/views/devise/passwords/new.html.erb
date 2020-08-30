@@ -8,9 +8,6 @@
     <div class="fadeIn first">
       <h3>Esqueceu sua senha?</h3>
     </div>
-
-    <!-- Login Form -->
-    <form>
       <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
         <%= render "devise/shared/error_messages", resource: resource %>
 
@@ -23,7 +20,6 @@
           <%= f.submit "Recuperar Senha" %>
         </div>
       <% end %>
-    </form>
 
     <!-- Remind Passowrd -->
     <div id="formFooter">
