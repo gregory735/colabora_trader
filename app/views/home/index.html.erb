@@ -4,7 +4,11 @@
 </header>
 
 <% if collaborator_signed_in? %>
-  <%= current_collaborator.name %>
+  <% if current_collaborator.admin %>
+    <%= "Administrador: #{current_collaborator.name}" %>
+  <% else %>
+    <%= current_collaborator.name %>
+  <% end %>
   <li><%= link_to 'Sair', destroy_collaborator_session_path, method: :delete %></li>
 <% else %>
   <%= link_to 'Entrar', new_collaborator_session_path %>
