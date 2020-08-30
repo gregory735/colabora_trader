@@ -2,8 +2,8 @@ feature 'collaborator sign in' do
   scenario 'from home page' do
     visit root_path
 
-    expect(page).to have_link('Nova Conta')
-    expect(page).to have_link('Entrar')
+    expect(current_path).to eq new_collaborator_session_path
+    expect(page).to have_content('Bem vindo ao Colabora Trader!')
   end
 
   scenario 'successfully' do
@@ -11,7 +11,6 @@ feature 'collaborator sign in' do
                          password: '123456', cpf: '310.208.020-06', position: 'Estagiario')
 
     visit root_path
-    click_on 'Entrar'
     fill_in 'E-mail', with: 'gregory@colaboratrader.com'
     fill_in 'Senha', with: '123456'
     click_on 'Entrar'
@@ -27,7 +26,6 @@ feature 'collaborator sign in' do
                          password: '123456', cpf: '310.208.020-06', position: 'Estagiario')
 
     visit root_path
-    click_on 'Entrar'
     click_on 'Entrar'
 
     expect(page).to have_content('E-mail ou senha inválidos')
