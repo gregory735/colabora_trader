@@ -1,4 +1,6 @@
-<h1>Categorias de produto</h1>
+<<%= render partial: 'home/navbar' %>
+  
+  h1>Categorias de produto</h1>
 
 <dl> 
   <dt><%= ProductCategory.human_attribute_name :name %></dt>
@@ -6,3 +8,6 @@
 </dl>
 
 <%= link_to 'Voltar', new_product_category_path %>
+
+
+<%= render partial: 'home/footer' %>

@@ -1,0 +1,40 @@
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+
+<header>
+  <h4><%= link_to 'CampusCode', 'http://www.campuscode.com.br'%></h4>
+</header>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="/"><h3>ColaBora Trader</h3></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <% if collaborator_signed_in? %>
+              <% if current_collaborator.admin %>
+                <%= "Administrador: #{current_collaborator.name}" %>
+              <% else %>
+               <%= current_collaborator.name %>
+              <% end %>     
+            <% end %>
+          </a>
+          <!-- Here's the magic. Add the .animate and .slide-in classes to your .dropdown-menu and you're all set! -->
+          <div class="dropdown-menu dropdown-menu-right animate slideIn" aria-labelledby="navbarDropdown">
+            <% if collaborator_signed_in? %>
+              <% if current_collaborator.admin %>
+                <%= link_to 'Registrar categoria de produto', new_product_category_path, class: 'dropdown-item' %>
+                <%= link_to 'Ver categorias de produto', product_categories_path, class: 'dropdown-item' %>
+              <% end %>
+            <% end %>
+            <div class="dropdown-divider"></div>
+              <%= link_to 'Sair', destroy_collaborator_session_path, method: :delete, class: 'dropdown-item' %>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

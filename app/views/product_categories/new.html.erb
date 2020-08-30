@@ -1,3 +1,5 @@
+<%= render partial: 'home/navbar' %>
+
 <ul>
   <% @product_category.errors.full_messages.each do |message| %>
     <li>
@@ -16,3 +18,6 @@
 <% end %>
 
 <%= link_to 'Voltar', root_path %>
+
+
+<%= render partial: 'home/footer' %>
