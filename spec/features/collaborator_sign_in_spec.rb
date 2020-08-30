@@ -8,7 +8,7 @@ feature 'collaborator sign in' do
 
   scenario 'successfully' do
     Collaborator.create!(name: 'Grégory', email: 'gregory@colaboratrader.com',
-                 password: '123456', cpf: '310.208.020-06')
+                         password: '123456', cpf: '310.208.020-06', position: 'Estagiario')
 
     visit root_path
     click_on 'Entrar'
@@ -24,7 +24,7 @@ feature 'collaborator sign in' do
 
   scenario 'and fields are blank' do
     Collaborator.create!(name: 'Grégory', email: 'gregory@colaboratrader.com',
-                 password: '123456', position: 'estagiario')
+                         password: '123456', cpf: '310.208.020-06', position: 'Estagiario')
 
     visit root_path
     click_on 'Entrar'
