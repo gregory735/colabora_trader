@@ -6,6 +6,7 @@
 <% if collaborator_signed_in? %>
   <% if current_collaborator.admin %>
     <%= "Administrador: #{current_collaborator.name}" %>
+    <%= link_to 'Registrar categoria de produto', new_product_category_path %>
   <% else %>
     <%= current_collaborator.name %>
   <% end %>

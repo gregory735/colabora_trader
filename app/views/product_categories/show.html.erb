@@ -1,0 +1,8 @@
+<h1>Categorias de produto</h1>
+
+<dl> 
+  <dt><%= ProductCategory.human_attribute_name :name %></dt>
+  <dd><%= @product_category.name %></dd>
+</dl>
+
+<%= link_to 'Voltar', new_product_category_path %>
