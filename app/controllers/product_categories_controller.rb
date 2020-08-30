@@ -1,14 +1,18 @@
 class ProductCategoriesController < ApplicationController
+  before_action :check_administrator
   before_action :set_product_category, only: [:show]
   before_action  :authenticate_collaborator!
 
   def index
-    @product_category = ProductCategory.all
+    @product_categories = ProductCategory.all
   end
 
   def show; end
 
   def new
+    if !(current_collaborator.admin)
+      redirect_to root_path, notice: 'você não é administrador'
+    end
     @product_category = ProductCategory.new
   end
 
@@ -18,6 +22,12 @@ class ProductCategoriesController < ApplicationController
       redirect_to @product_category, notice: 'categoria registrada com sucesso!'
     else
       render :new
+    end
+  end
+
+  def check_administrator
+    if !(current_collaborator.admin)
+      redirect_to root_path, notice: 'você não é administrador'
     end
   end
 
