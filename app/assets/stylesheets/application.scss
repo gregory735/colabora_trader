@@ -15,6 +15,44 @@
 
 @import "bootstrap-sprockets";
 
+.footer{
+  position: relative;
+  top: 40%;
+}
+
+.alignlogo {
+  position: absolute;
+  left: 100px;
+  color: #000000;
+}
+
+.categoryname {
+  color: #ffffff;
+  font-size: 25px;
+  position: absolute;
+  bottom: 75%;
+  left: 43%;
+}
+
+.cadastrar {
+  position: absolute;
+  bottom: 60%;
+  left: 41.3%;
+}
+
+.categorynamebox {
+  position: absolute;
+  bottom: 71%;
+  width: 15%;
+  height: 4%;
+  left: 41%;
+}
+
+.aligncampuscode{
+  position: relative;
+  bottom: 25px;
+  left: 42%;
+}
 
 body {
   font-family: "Poppins", sans-serif;
@@ -22,7 +60,7 @@ body {
 }
 
 a {
-  color: #92badd;
+  color: #cccccc;
   display:inline-block;
   text-decoration: none;
   font-weight: 400;
@@ -144,7 +182,7 @@ h2.active {
 /* FORM TYPOGRAPHY*/
 
 input[type=button], input[type=submit], input[type=reset]  {
-  background-color: #56baed;
+  background-color: #39ace7;
   border: none;
   color: white;
   padding: 15px 80px;
@@ -166,7 +204,7 @@ input[type=button], input[type=submit], input[type=reset]  {
 }
 
 input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover  {
-  background-color: #39ace7;
+  background-color: #043e5c;
 }
 
 input[type=button]:active, input[type=submit]:active, input[type=reset]:active  {
@@ -436,9 +474,8 @@ input[type=password]:placeholder {
   animation-name: slideIn;
 }
 
-/* Other styles for the page not related to the animated dropdown */
 
 body {
-  background: #007bff;
-  background: linear-gradient(to right, #0062E6, #33AEFF);
+  background: #ffffff;
+  background: linear-gradient(to right, #a0a2a5, #999797);
 }

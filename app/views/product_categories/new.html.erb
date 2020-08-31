@@ -10,11 +10,12 @@
 
 <%= form_with model: @product_category, local:true do |f| %>
   <div>
-    <%= f.label :name, 'Nome da categoria' %>
-    <%= f.text_field :name %>
+    <%= f.label :name, 'Nome da categoria', class: 'categoryname' %><br>
+    <%= f.text_field :name, class: 'categorynamebox' %>
   </div>
   <%= f.submit 'Cadastrar', 
-                        data: {confirm: "confirma a criação da nova categoria?"} %>
+                        data: {confirm: "confirma a criação da nova categoria?"}, 
+                        class: 'cadastrar' %>
 <% end %>
 
 <%= link_to 'Voltar', root_path %>

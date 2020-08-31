@@ -3,7 +3,7 @@ feature 'collaborator sign in' do
     visit root_path
 
     expect(current_path).to eq new_collaborator_session_path
-    expect(page).to have_content('Bem vindo ao Colabora Trader!')
+    expect(page).to have_content('Bem vindo ao ColaBora Trader!')
   end
 
   scenario 'successfully' do
