@@ -106,4 +106,11 @@ feature 'Admin sign up' do
     expect(page).to have_content('você não é administrador')
     expect(current_path).to eq root_path
   end
+
+  scenario 'and if not logged in cannot see category' do
+    visit product_categories_path
+
+    expect(page).to have_content('Você deve estar logado!')
+    expect(current_path).to eq new_collaborator_session_path
+  end
 end

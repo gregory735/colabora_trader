@@ -10,9 +10,6 @@ class ProductCategoriesController < ApplicationController
   def show; end
 
   def new
-    if !(current_collaborator.admin)
-      redirect_to root_path, notice: 'você não é administrador'
-    end
     @product_category = ProductCategory.new
   end
 
@@ -26,8 +23,12 @@ class ProductCategoriesController < ApplicationController
   end
 
   def check_administrator
-    if !(current_collaborator.admin)
-      redirect_to root_path, notice: 'você não é administrador'
+    if collaborator_signed_in?
+      if !(current_collaborator.admin)
+        redirect_to root_path, notice: 'você não é administrador'
+      end
+    else
+      redirect_to new_collaborator_session_path, notice: 'Você deve estar logado!'
     end
   end
 
