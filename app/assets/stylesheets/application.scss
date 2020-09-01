@@ -16,8 +16,10 @@
 @import "bootstrap-sprockets";
 
 .footer{
-  position: relative;
-  top: 40%;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .alignlogo {
@@ -27,31 +29,35 @@
 }
 
 .categoryname {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   color: #ffffff;
   font-size: 25px;
-  position: absolute;
-  bottom: 75%;
-  left: 43%;
 }
 
 .cadastrar {
   position: absolute;
-  bottom: 60%;
-  left: 41.3%;
+  top: 50%;
+  left: 48.5%;
+  transform: translate(-50%, -50%);
 }
 
 .categorynamebox {
+  width: 25%;
+  height: 6%;
   position: absolute;
-  bottom: 71%;
-  width: 15%;
-  height: 4%;
-  left: 41%;
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .aligncampuscode{
-  position: relative;
-  bottom: 25px;
-  left: 42%;
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 body {

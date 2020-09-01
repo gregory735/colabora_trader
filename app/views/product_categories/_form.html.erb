@@ -1,0 +1,24 @@
+<%= render partial: 'home/navbar' %>
+
+<ul>
+  <% product_category.errors.full_messages.each do |message| %>
+    <li>
+      <%= message %>
+    </li>
+  <% end %>
+</ul>
+
+<%= form_with model: product_category, local:true do |f| %>
+  <div>
+    <%= f.label :name, 'Nome da categoria', class: 'categoryname' %><br>
+    <%= f.text_field :name, class: 'categorynamebox' %>
+  </div>
+  <%= f.submit send, 
+                        data: {confirm: "confirma a edição da categoria?"}, 
+                        class: 'cadastrar' %>
+<% end %>
+
+<%= link_to 'Voltar', root_path %>
+
+
+<%= render partial: 'home/footer' %>
