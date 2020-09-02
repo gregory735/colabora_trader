@@ -1,6 +1,6 @@
 class ProductCategoriesController < ApplicationController
   before_action :check_administrator
-  before_action :set_product_category, only: [:show, :edit, :update]
+  before_action :set_product_category, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_collaborator!
 
   def index
@@ -31,6 +31,11 @@ class ProductCategoriesController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @product_category.destroy
+    redirect_to product_categories_path
   end
 
   def check_administrator

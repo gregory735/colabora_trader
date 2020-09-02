@@ -8,7 +8,8 @@
 </dl>
 
 <%= link_to 'Editar', edit_product_category_path(@product_category) %>
+<%= link_to 'Apagar', product_category_path(@product_category), method: :delete,
+                                          data: { confirm: 'Tem certeza que deseja deletar?'} %>
 <%= link_to 'Voltar', new_product_category_path %>
-
 
 <%= render partial: 'home/footer' %>
