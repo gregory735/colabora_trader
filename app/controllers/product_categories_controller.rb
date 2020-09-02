@@ -25,7 +25,6 @@ class ProductCategoriesController < ApplicationController
   def edit; end
 
   def update
-    print "estou aqui"
     if @product_category.update(product_category_params)
       redirect_to @product_category
     else
