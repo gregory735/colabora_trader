@@ -1,0 +1,31 @@
+<%= render partial: 'home/navbar' %>
+
+<dl>
+  <dt><%= Product.human_attribute_name :name %></dt>
+  <dd><%= @product.name %></dd>
+
+  <dt><%= Product.human_attribute_name :price %></dt>
+  <dd><%= number_to_currency @product.price %></dd>
+
+  <dt><%= Product.human_attribute_name :condition %></dt>
+  <dd>
+    <% if @product.condition %>
+      <h5>Novo</h5>
+    <% else %>
+      <h5>Usado</h5>
+    <% end %>
+  </dd>
+  
+  <dt><%= Product.human_attribute_name :product_category %></dt>
+  <dd><%= @product.product_category.name %></dd>
+
+  <dt><%= Product.human_attribute_name :start_date %></dt>
+  <dd><%= l @product.start_date %></dd>
+  
+  <dt><%= Product.human_attribute_name :end_date %></dt>
+  <dd><%= l @product.end_date %></dd>
+</dl>
+
+<%= link_to 'Voltar', new_product_path, class:"btn btn-primary a-btn-slide-text" %>
+
+<%= render partial: 'home/footer' %>
