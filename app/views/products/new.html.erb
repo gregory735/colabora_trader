@@ -27,12 +27,12 @@
   </div>
   <div>
     <%= f.label :product_category_id, 'Categoria de produto' %>
-    <%= f.collection_select :product_category_id, ProductCategory.all, :id, :name %>
+    <%= f.collection_select :product_category_id, ProductCategory.all, :id, :name, {prompt: 'Selecione um produto'} %>
   </div>
   <div>
     <%= f.label :start_date, 'Data inicio venda' %>
     <%= f.date_field :start_date %>
-  </div>>
+  </div>
   <div>
     <%= f.label :end_date, 'Data fim venda' %>
     <%= f.date_field :end_date %>

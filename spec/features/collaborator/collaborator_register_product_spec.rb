@@ -30,4 +30,30 @@ feature 'Collaborator register product' do
     expect(page).to have_content('21/08/2030')
     expect(page).to have_content('21/09/2030')
   end
+
+  scenario 'and field cannot be blank' do
+    collaborator = Collaborator.create!(name: 'Grégory', email: 'greg@colaboratrader.com',
+                                        password: '123456', cpf: '310.208.020-06',
+                                        position: 'Estagiario')
+    login_as(collaborator, scope: :collaborator)
+
+    visit root_path
+    click_on 'Colocar um produto à venda'
+    click_on 'Colocar à venda'
+
+    expect(page).to have_content('Categoria de produto é obrigatório(a)')
+    expect(page).to have_content('Categoria de produto não pode ficar em branco')
+    expect(page).to have_content('Produto não pode ficar em branco')
+    expect(page).to have_content('Preço não pode ficar em branco')
+    expect(page).to have_content('Quantidade não pode ficar em branco')
+    expect(page).to have_content('Condição não pode ficar em branco')
+    expect(page).to have_content('Start date não pode ficar em branco')
+    expect(page).to have_content('End date não pode ficar em branco')
+  end
+
+  scenario 'and if not logged cannot register product' do
+    visit new_product_path
+
+    expect(page).to have_content('Para continuar, faça login ou registre-se.')
+  end
 end

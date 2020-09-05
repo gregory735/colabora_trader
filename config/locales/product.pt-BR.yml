@@ -9,4 +9,5 @@ pt-BR:
         price: 'Preço'
         condition: 'Condição'
         amount: 'Quantidade'
+        product_category: 'Categoria de produto'
         
